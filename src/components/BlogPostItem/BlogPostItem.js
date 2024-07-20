@@ -7,10 +7,8 @@ import styles from "./BlogPostItem.module.css";
 function BlogPostItem({ details, id }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log(details);
 
   const showPost = (index) => {
-    console.log(index);
     dispatch(setBlogPost(details));
 
     navigate(`/post/${index}`);

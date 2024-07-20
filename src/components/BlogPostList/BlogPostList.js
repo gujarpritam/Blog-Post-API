@@ -17,8 +17,6 @@ function BlogPostList() {
     fetchDetails();
   }, []);
 
-  // useEffect(() => {}, [data]);
-
   const fetchDetails = () => {
     fetch(
       "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3e16e9d3f43e467381619347d950903f"
@@ -27,11 +25,6 @@ function BlogPostList() {
         return data.json();
       })
       .then((res) => {
-        console.log(res);
-        console.log(recordsPerPage);
-        console.log(firstIndex);
-        console.log(lastIndex);
-
         setData([...res?.articles]);
         records = res?.articles.slice(firstIndex, lastIndex);
         let totalPage = Math.ceil(res?.articles.length / recordsPerPage);
@@ -39,7 +32,6 @@ function BlogPostList() {
         let numArray = numbers;
         numArray = [...Array(totalPage + 1).keys()].slice(1);
         setNumbers([...numArray]);
-        console.log(numbers);
       })
       .catch((err) => {
         console.log(err);
@@ -61,11 +53,6 @@ function BlogPostList() {
       setCurrentPage(currentPage + 1);
     }
   };
-
-  console.log(data);
-  console.log(npage);
-  console.log(records);
-  console.log(numbers);
 
   return (
     <div className={styles.container}>

@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { setBlogPost } from "../../slices/blogPostSlice";
 import styles from "./BlogPostDetails.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function BlogPostDetails() {
   const { id } = useParams();
@@ -12,8 +11,6 @@ function BlogPostDetails() {
   const blogPostState = useSelector((state) => state.blogPost);
   const [details, setDetails] = useState({ ...blogPostState.value });
 
-  console.log(id);
-  console.log(details);
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
