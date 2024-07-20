@@ -25,6 +25,8 @@ function BlogPostList() {
         return data.json();
       })
       .then((res) => {
+        console.log(typeof res?.articles);
+        console.log(res?.articles);
         setData([...res?.articles]);
         records = res?.articles.slice(firstIndex, lastIndex);
         let totalPage = Math.ceil(res?.articles.length / recordsPerPage);
