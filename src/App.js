@@ -5,7 +5,7 @@ import BlogPostDetails from "../src/components/BlogPostDetails/BlogPostDetails";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Blog-Post-API">
       <Routes>
         <Route path="/" element={<BlogPostList />} />
         <Route path="/post/:id" element={<BlogPostDetails />} />
